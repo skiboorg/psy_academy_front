@@ -31,6 +31,9 @@ export function createDataRepository(appFetch: typeof $fetch){
         news_tags(){
             return appFetch(`/api/data/news_tags`);
         },
+        parnters(){
+            return appFetch(`/api/data/parnters`);
+        },
         news(show_on_main: boolean = false, random_count: number = 0) {
             let url = `/api/data/news/`;
 

@@ -8,6 +8,9 @@ const carouselConfig = {
   //slideEffect:'fade'
 }
 const slider = ref()
+const {$api} = useNuxtApp()
+const {data:parters} = await useHttpRequest( useAsyncData(()=>$api.data.parnters()))
+
 </script>
 
 <template>
@@ -26,8 +29,8 @@ const slider = ref()
     </div>
   </template>
   <Carousel ref="slider" v-bind="carouselConfig">
-    <Slide >
-      <CardPartner/>
+    <Slide v-for="item in parters" :key="item.id" >
+      <CardPartner :item="item"/>
     </Slide>
   </Carousel>
 </BlockSection>

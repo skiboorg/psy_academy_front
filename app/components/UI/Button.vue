@@ -28,7 +28,7 @@ const buttonClasses = computed(() => {
 
 <button
     :class="[
-      'inline-flex rounded-[40px] items-center justify-center gap-2 px-[20px] py-[10px] font-medium transition-colors',
+      'inline-flex w-full lg:w-auto rounded-[40px] items-center justify-center gap-2 px-[20px] py-[10px] font-medium transition-colors',
       small?'text-sm':'',
       buttonClasses
     ]"
