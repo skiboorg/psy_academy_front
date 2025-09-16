@@ -40,21 +40,17 @@ const {data:news} = await useHttpRequest( useAsyncData(()=>$api.data.news(false,
   <BlockSection :title_text="user.full_name" >
     <div class="grid grid-cols-12 gap-5">
       <div class="col-span-12 lg:col-span-8">
-        <CardBase>
-          <p class="text-sm lg:max-w-[70%] leading-[140%] mb-10 lg:mb-20">{{user.short_description}}</p>
-          <div class="grid grid-cols-12 gap-5 lg:gap-0">
-            <div class="col-span-12 lg:col-span-8">
-              <p class="text-sm mb-1">Должность</p>
-              <TypingText26 :text="user.position" extra_class="text-primary mb-5 lg:mb-12"/>
+        <CardBase extra_class="space-y-7">
+          <UIBadge :label="user.position"/>
+          <p class="text-sm lg:max-w-[70%] leading-[140%] ">{{user.short_description}}</p>
+          <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-2"><p class="text-primary font-semibold">Стаж работы</p></div>
+            <div class="col-span-10"><p>{{user.work_time}}</p></div>
+            <div class="col-span-2"><p class="text-primary font-semibold">Должность</p></div>
+            <div class="col-span-10"><p>{{user.position}}</p></div>
+            <div class="col-span-2"><p class="text-primary font-semibold">Квалификация</p></div>
+            <div class="col-span-10"><p>{{user.quality}}</p></div>
 
-              <p class="text-sm mb-1">Квалификация</p>
-              <TypingText26 :text="user.quality" extra_class="text-primary"/>
-
-            </div>
-            <div class="col-span-12 lg:col-span-4">
-              <p class="text-sm mb-1">Стаж работы</p>
-              <TypingText26 :text="user.work_time" extra_class="text-primary"/>
-            </div>
           </div>
         </CardBase>
       </div>

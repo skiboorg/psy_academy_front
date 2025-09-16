@@ -13,7 +13,7 @@ watch(() => route.fullPath, () => {
 
 const links = [
   {label:'Главная',to:'/'},
-  {label:'Об академии',to:'/'},
+  {label:'Об академии',to:'/about'},
   {label:'Программы обучения',to:'/education_program'},
   {label:'Лекторий',to:'/lecture_hall'},
   {label:'Абитуриенту',to:'/'},

@@ -1,13 +1,19 @@
 <script setup lang="ts">
-
+const visible = useState('callbackModalVisible')
+const form_type = useState('callbackModalFormType')
 const links = [
   {label:'Главная',to:'/'},
-  {label:'Об академии',to:'/'},
+  {label:'Об академии',to:'/about'},
   {label:'Программы обучения',to:'/education_program'},
   {label:'Лекторий',to:'/lecture_hall'},
   {label:'Абитуриенту',to:'/'},
   {label:'Контакты',to:'/'},
 ]
+
+const showCallBackModal = (formtype) => {
+  visible.value = true
+  form_type.value = formtype
+}
 </script>
 
 <template>
@@ -48,7 +54,7 @@ const links = [
             <p class="text-sm text-[#727272] mb-3 lg:mb-6">ВРЕМЯ РАБОТЫ</p>
             <p class="text-xl font-semibold" >с 10:00 - до 19:00</p>
           </div>
-          <UIButton >Связаться с нами</UIButton>
+          <UIButton @click="showCallBackModal('primary')">Связаться с нами</UIButton>
         </div>
       </div>
       <div class="flex flex-wrap items-center border-b gap-0 lg:gap-10 py-6 ">

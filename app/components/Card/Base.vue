@@ -14,7 +14,7 @@ const variantClasses = {
   default: 'bg-white p-[30px]',
   primary: 'bg-primary text-white p-[30px]',
   teacher: 'bg-white px-7 py-7 ',
-  dark: 'bg-[#2c2c2c] text-white p-[30px]'
+  dark: 'bg-[#5D6062] text-white p-[30px]'
 }
 
 </script>

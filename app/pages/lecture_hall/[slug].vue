@@ -7,6 +7,12 @@ definePageMeta({
 const {$api} = useNuxtApp()
 const {slug} = useRoute().params
 const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.lecture(slug)))
+const visible = useState('callbackModalVisible')
+const form_type = useState('callbackModalFormType')
+const showCallBackModal = (formtype) => {
+  visible.value = true
+  form_type.value = formtype
+}
 
 </script>
 
@@ -35,7 +41,7 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.lecture(
         <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format_txt"/>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
-        <RoundedButton is_hero>Приобрести запись</RoundedButton>
+        <RoundedButton is_hero @click="showCallBackModal('default')">Приобрести запись</RoundedButton>
         <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
       </div>
     </div>
@@ -156,7 +162,7 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.lecture(
   </BlockSection>
   <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
                 :file="program.study_plan ? program.study_plan : null">
-    <BlockCourseInfoPanel :items="program.lecture_modules"/>
+    <BlockCourseInfoPanel :show_index="true" :items="program.lecture_modules"/>
   </BlockSection>
   <BlockSection title_text="Авторы обучения" extra_class="!mb-20">
 

@@ -54,7 +54,7 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.program(
   </BlockSection>
   <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
                 :file="program.study_plan ? program.study_plan : null">
-  <BlockCourseInfoPanel :items="program.modules"/>
+  <BlockCourseInfoPanel :show_index="true" :items="program.modules"/>
   </BlockSection>
   <BlockSection v-if="program.video">
     <div class="grid grid-cols-12 gap-5 h-[430px]">

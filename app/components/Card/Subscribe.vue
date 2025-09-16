@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const email = ref()
 const agreed = ref(false)
+defineProps(['variant'])
 </script>
 
 <template>
-  <CardBase variant="primary">
+  <CardBase :variant="variant">
+
     <TypingText26 text="Получайте первыми анонсы новых мероприятий лектория"
                   extra_class="leading-[120%] tracking-[-0.05rem] mb-[30px]"/>
     <div class="space-y-3 mb-[30px]">

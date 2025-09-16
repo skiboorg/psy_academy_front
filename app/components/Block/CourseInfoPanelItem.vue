@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const collapsed = ref(true)
-defineProps(['item','index'])
+defineProps(['item','index','show_index'])
 </script>
 
 <template>
@@ -18,7 +18,7 @@ defineProps(['item','index'])
 
     <template #header>
       <div class="flex flex-col gap-5 items-start">
-        <UIBadge :label="`Модуль ${index + 1}`"/>
+        <UIBadge v-if="show_index" :label="`Модуль ${index + 1}`"/>
         <p class="text-lg font-semibold">{{item.name}}</p>
       </div>
     </template>

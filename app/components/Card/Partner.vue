@@ -4,7 +4,7 @@ defineProps(['item'])
 
 <template>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
-  <div class="order-0 lg:order-1 grid grid-cols-12 bg-white rounded-[5px] p-[30px] ">
+  <div class="order-1 lg:order-0 grid grid-cols-12 bg-white rounded-[5px] p-[30px] ">
     <div class="col-span-2 lg:col-span-1">
       <svg width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19.8017 0L10.0192 15.5L19.8017 31H9.86141L0 15.5L9.86141 0H19.8017ZM37 0L27.2175 15.5L37 31H27.0597L17.1983 15.5L27.0597 0H37Z" fill="#B71D31"/>
@@ -25,9 +25,9 @@ defineProps(['item'])
       <p class="text-sm text-#727272">{{item.text1}}</p>
     </div>
   </div>
-  <div class="">
-    <img class="order-1 lg:order-0 w-full h-full object-cover" :src="item.image" alt="">
-  </div>
+
+    <img class="order-0 lg:order-1 w-full h-full object-cover" :src="item.image" alt="">
+
 </div>
 </template>
 
