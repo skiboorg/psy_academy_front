@@ -43,7 +43,7 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.program(
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="card in program.about_items" :variant="card.block_type" >
         <TypingText26 :text="card.name" extra_class="mb-5"/>
-        <p class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></p>
+        <div class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></div>
         <template v-if="card.svg" #image>
           <div class="absolute right-0 bottom-0" v-html="card.svg"></div>
         </template>

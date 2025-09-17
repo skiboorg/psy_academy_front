@@ -171,6 +171,9 @@ const showCallBackModal = (formtype) => {
 
     </div>
   </BlockSection>
+  <BlockSection title_text="Тарифы">
+    <BlockTariff :item="program.tariff"/>
+  </BlockSection>
 </template>
 
 <style scoped>
