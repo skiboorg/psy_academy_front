@@ -3,11 +3,12 @@ const visible = useState('callbackModalVisible')
 const form_type = useState('callbackModalFormType')
 const links = [
   {label:'Главная',to:'/'},
-  {label:'Об академии',to:'/about'},
-  {label:'Программы обучения',to:'/education_program'},
+  {label:'Программы',to:'/education_program'},
   {label:'Лекторий',to:'/lecture_hall'},
-  {label:'Абитуриенту',to:'/'},
-  {label:'Контакты',to:'/'},
+  {label:'Медиа',to:'/news'},
+  {label:'Об академии',to:'/about'},
+  {label:'Преподаватели',to:'/management_team'},
+
 ]
 
 const showCallBackModal = (formtype) => {
@@ -44,20 +45,20 @@ const showCallBackModal = (formtype) => {
             <a class="text-xl font-semibold"  href="tel:+79991112233">+79991112233</a>
             <a class="text-xl font-semibold"  href="mailto:email@email.email">email@email.email</a>
           </div>
-          <div class="">
-            <p class="text-sm text-[#727272] mb-3 lg:mb-6">АДРЕС</p>
-            <p class="text-sm text-[#727272] ">Lorem ipsum dolor.<br>Lorem ipsum dolor.</p>
-          </div>
+<!--          <div class="">-->
+<!--            <p class="text-sm text-[#727272] mb-3 lg:mb-6">АДРЕС</p>-->
+<!--            <p class="text-sm text-[#727272] ">Lorem ipsum dolor.<br>Lorem ipsum dolor.</p>-->
+<!--          </div>-->
         </div>
-        <div class="flex flex-col items-start justify-between gap-2 lg:gap-0 w-full">
-          <div class="">
-            <p class="text-sm text-[#727272] mb-3 lg:mb-6">ВРЕМЯ РАБОТЫ</p>
-            <p class="text-xl font-semibold" >с 10:00 - до 19:00</p>
-          </div>
-          <UIButton @click="showCallBackModal('primary')">Связаться с нами</UIButton>
-        </div>
+<!--        <div class="flex flex-col items-start justify-between gap-2 lg:gap-0 w-full">-->
+<!--          <div class="">-->
+<!--            <p class="text-sm text-[#727272] mb-3 lg:mb-6">ВРЕМЯ РАБОТЫ</p>-->
+<!--            <p class="text-xl font-semibold" >с 10:00 - до 19:00</p>-->
+<!--          </div>-->
+<!--          <UIButton @click="showCallBackModal('primary')">Связаться с нами</UIButton>-->
+<!--        </div>-->
       </div>
-      <div class="flex flex-wrap items-center border-b gap-0 lg:gap-10 py-6 ">
+      <div class="flex flex-col lg:flex-row lg:items-center border-b gap-0 lg:gap-10 py-6 ">
 
         <p class="text-[#727272]">Политика конфиденциальности</p>
         <p  class="text-[#727272]">Публичная оферта</p>

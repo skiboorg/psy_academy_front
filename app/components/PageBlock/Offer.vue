@@ -1,7 +1,15 @@
 <script setup lang="ts">
 type Visible = { sm: boolean; md: boolean; lg: boolean };
 type Card = { title: string; text: string; to: string; visible: Visible };
-
+import {Carousel, Pagination, Slide} from "vue3-carousel";
+const carouselConfig = {
+  itemsToShow: 1,
+  wrapAround: true,
+  //autoplay: 3000,
+  pauseAutoplayOnHover: true,
+  //slideEffect:'fade'
+}
+const window_w = ref(window.innerWidth);
 const cards: Card[] = [
   {
     title: 'Об академии',
@@ -81,9 +89,8 @@ function isLastVisible(index: number) {
             <div class="container h-full">
               <div class="h-full relative z-10 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0 text-white">
 
-                <template v-for="(item, index) in cards" :key="index">
+                <template v-if="window_w > 768" v-for="(item, index) in cards" :key="index">
                   <div :class="classesFor(item)">
-
                     <CardOffer
                         :title="item.title"
                         :text="item.text"
@@ -92,6 +99,19 @@ function isLastVisible(index: number) {
                     />
                   </div>
                 </template>
+                <template v-else>
+                  <Carousel ref="slider" v-bind="carouselConfig">
+                    <Slide v-for="(item, index) in cards" >
+                      <CardOffer
+                          :title="item.title"
+                          :text="item.text"
+                          :to="item.to"
+                          :is-last="isLastVisible(index)"
+                      />
+                    </Slide>
+                  </Carousel>
+                </template>
+
               </div>
             </div>
           </div>

@@ -9,15 +9,13 @@ watch(() => route.fullPath, () => {
   mobileMenuActive.value = false
 });
 
-
-
 const links = [
   {label:'Главная',to:'/'},
-  {label:'Об академии',to:'/about'},
-  {label:'Программы обучения',to:'/education_program'},
+  {label:'Программы',to:'/education_program'},
   {label:'Лекторий',to:'/lecture_hall'},
-  {label:'Абитуриенту',to:'/'},
-  {label:'Контакты',to:'/'},
+  {label:'Медиа',to:'/news'},
+  {label:'Об академии',to:'/about'},
+  {label:'Преподаватели',to:'/management_team'},
 
 ]
 </script>
@@ -35,7 +33,7 @@ const links = [
       <!-- Навигация -->
       <nav class="hidden lg:block">
         <ul class="flex gap-5">
-          <li v-for="link in links"><NuxtLink class="text-xs" :to="link.to">{{link.label}}</NuxtLink></li>
+          <li v-for="link in links"><NuxtLink class="text-sm" :to="link.to">{{link.label}}</NuxtLink></li>
         </ul>
       </nav>
       <div class="hidden xl:block">
