@@ -16,7 +16,7 @@ const {data:parters} = await useHttpRequest( useAsyncData(()=>$api.data.parnters
 <template>
 <BlockSection title_text="Наши партнеры" :extra_buttons="true">
   <template #extra_buttons>
-    <div class="flex gap-3 w-full">
+    <div class="flex gap-3">
       <UIButton :primary="false" @click="slider.prev()">
         <template #icon>
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">

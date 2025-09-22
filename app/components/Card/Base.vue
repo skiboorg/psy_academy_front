@@ -21,7 +21,7 @@ const variantClasses = {
 
 <template>
   <div
-      class="h-full rounded-[5px]  relative z-10 overflow-hidden"
+      class="base-card h-full rounded-[5px]  relative z-10 overflow-hidden"
       :class="[variantClasses[variant],extra_class]"
   >
 
@@ -30,3 +30,9 @@ const variantClasses = {
     <slot name="image"/>
   </div>
 </template>
+<style lang="sass">
+.base-card
+  div
+    z-index: -1
+
+</style>

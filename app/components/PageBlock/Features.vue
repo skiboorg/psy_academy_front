@@ -10,9 +10,8 @@
         <CardBase extra_class="lg:!h-[240px]" variant="dark">
           <TypingText20 text="Свой научный центр" extra_class="mb-3"/>
           <p class=" text-sm leading-[120%] ">
-            Каждый студент Академии публикуется<br>
-            в научных изданиях и становится<br>специалистом,
-            который продвигает<br>вперёд и бизнес, и науку.
+            Каждый студент Академии публикуется в научных изданиях и становится специалистом, который продвигает вперёд и бизнес, и науку.
+
           </p>
           <template #image>
             <div class="absolute bottom-0 top-0 right-[50px]">
@@ -25,14 +24,16 @@
       </div>
       <div class="col-span-12 lg:col-span-3">
         <CardBase >
-          <TypingText20 text="Медиа" extra_class="mb-3"/>
-          <p class=" text-sm leading-[120%] ">Факультеты<br>и подробное<br>описание программ</p>
+          <TypingText20 text="Синтез науки, бизнеса и личности" extra_class="mb-3"/>
+          <p class=" text-sm leading-[120%] ">Наши программы соединяют технологии и менеджмент, формируя
+            мета-компетенции студентов, уверенных и в науке, и в бизнесе.</p>
         </CardBase>
       </div>
       <div class="col-span-12 lg:col-span-3">
         <CardBase variant="dark">
-          <TypingText20 text="Научный центр" extra_class="mb-3"/>
-          <p class=" text-sm leading-[120%] ">Факультеты<br>и подробное<br>описание программ</p>
+          <TypingText20 text="Образование = результат, а не теория" extra_class="mb-3"/>
+          <p class=" text-sm leading-[120%] ">Вы получаете не только диплом — AI-платформа выстраивает персональный
+            путь и интегрирует знания в ваш карьерный рост.</p>
           <template #image>
             <div class="absolute w-full bottom-0 top-0 left-0 right-0 z-[-1]">
               <img class="w-full h-full object-cover" src="/images/f_bg_1.png" alt="">
@@ -42,8 +43,9 @@
       </div>
       <div class="col-span-12 lg:col-span-3">
         <CardBase variant="dark">
-          <TypingText20 text="Программы" extra_class="mb-3"/>
-          <p class=" text-sm leading-[120%] ">Факультеты<br>и подробное<br>описание программ</p>
+          <TypingText20 text="Консервативность + технологичность" extra_class="mb-3"/>
+          <p class=" text-sm leading-[120%] ">Мы соединяем традиции мировых университетов с современными технологиями:
+            AI-треками, выбором курсов и практическими проектами.</p>
           <template #image>
             <div class="absolute w-full bottom-0 top-0 left-0 right-0 z-[-1]">
               <img class="w-full h-full object-cover" src="/images/f_bg_2.png" alt="">
@@ -53,17 +55,17 @@
       </div>
       <div class="col-span-12 lg:col-span-3">
         <CardBase >
-          <TypingText20 text="Об Академии" extra_class="mb-3"/>
-          <p class=" text-sm leading-[120%] ">Факультеты<br>и подробное<br>описание программ</p>
+          <TypingText20 text="Ориентация в будущее" extra_class="mb-3"/>
+          <p class=" text-sm leading-[120%] ">
+            Мы готовим программы будущего: выпускники не догоняют рынок, а становятся лидерами и формируют его повестку.
+          </p>
         </CardBase>
       </div>
       <div class="col-span-12 lg:col-span-6">
         <CardBase extra_class="lg:!h-[210px]" variant="primary">
-          <TypingText20 text="Об Академии" extra_class="mb-3"/>
+          <TypingText20 text="Международное сообщество и связи" extra_class="mb-3"/>
           <p class=" text-sm leading-[120%] ">
-            Каждый студент Академии публикуется<br>
-            в научных изданиях и становится<br>специалистом,
-            который продвигает<br>вперёд и бизнес, и науку.
+            Каждый студент получает бессрочный доступ к сообществу предпринимателей, международным проектам и карьерным возможностям.
           </p>
           <template #image>
             <div class="absolute bottom-0 top-0 right-[50px]">

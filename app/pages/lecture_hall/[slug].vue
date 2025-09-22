@@ -11,7 +11,7 @@ const visible = useState('callbackModalVisible')
 const form_type = useState('callbackModalFormType')
 const showCallBackModal = (formtype) => {
   visible.value = true
-  form_type.value = formtype
+  form_type.value = {formtype,name:'Лекция: ' + program.value.name}
 }
 
 </script>
@@ -27,9 +27,9 @@ const showCallBackModal = (formtype) => {
   { label: program.name,},
   ]"
       />
-      <div >
+      <div class="w-full">
         <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
-        <p class="text-white lg:text-lg leading-[120%] lg:max-w-[35%]">{{program.short_description}}</p>
+        <p class="text-white lg:text-lg !leading-[120%] lg:max-w-[40%]">{{program.short_description}}</p>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5">
         <CardCourseInfoItem class="lg:col-span-2" title="Стоимость" :text="program.price"/>
@@ -41,7 +41,7 @@ const showCallBackModal = (formtype) => {
         <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format_txt"/>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
-        <RoundedButton is_hero @click="showCallBackModal('default')">Приобрести запись</RoundedButton>
+        <RoundedButton is_hero @click="showCallBackModal('primary')">Приобрести запись</RoundedButton>
         <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
       </div>
     </div>
@@ -166,7 +166,7 @@ const showCallBackModal = (formtype) => {
   </BlockSection>
   <BlockSection title_text="Авторы обучения" extra_class="!mb-20">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 h-[350px]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 h-auto lg:h-[350px]">
       <CardTeacherH v-for="item in program.teachers" :item="item" />
 
     </div>

@@ -58,6 +58,22 @@ export function createDataRepository(appFetch: typeof $fetch){
 
         },
 
+        send_l_form(body){
+            return appFetch(`/api/data/l_form`,{
+                method: "POST",
+                body
+            });
+
+        },
+
+        send_q_form(body){
+            return appFetch(`/api/data/q_form`,{
+                method: "POST",
+                body
+            });
+
+        },
+
     }
 
 }

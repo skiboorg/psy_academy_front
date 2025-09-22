@@ -11,7 +11,7 @@ defineProps(['item'])
     <CardBase >
 
           <TypingText26 :text="item.full_name" extra_class="mb-3"/>
-          <UIBadge class="mb-4" :text="item.position"/>
+          <UIBadge class="mb-4" :label="item.position"/>
 
 <!--        <div class="">-->
 <!--          <p class="text-[#727272] text-sm">E-mail</p>-->

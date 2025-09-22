@@ -4,23 +4,38 @@
 
 <template>
   <BlockSection title_text="Не только психология">
-    <div class="grid grid-cols-12 gap-5 h-auto lg:h-[430px] mb-5">
+    <div class="grid grid-cols-12 gap-5  mb-5">
       <div class="col-span-12 lg:col-span-8">
 
           <CardBase >
             <div class="h-full flex flex-col items-start justify-between">
-            <div class="">
+            <div class="mb-5">
               <div class="flex flex-wrap gap-[7px] mb-[30px]">
                 <UIBadge label="Промт-инжиниринг" variant="primary"/>
                 <UIBadge label="Пизайн-мышление" variant="primary"/>
                 <UIBadge label="Анализ данных" variant="primary"/>
               </div>
               <TypingText26 text="Технологии и ИИ" extra_class="mb-5"/>
-              <p class="text-sm leading-[140%] mb-5 max-w-[60%]">
-                Во все программы Академии уже встроены модули по современным технологиям и искусственному интеллекту, потому что без их интеграции невозможно представить будущее профессии.
+              <p class="text-sm leading-[140%] mb-5 lg:max-w-[60%]">
+                Мы включаем в программы Академии модули по технологиям и современным инструментам цифровой
+                трансформации, поскольку без их интеграции невозможно представить профессии будущего.
               </p>
-              <p class="text-sm leading-[140%] max-w-[60%] ">
-                Эти знания помогают нашим студентам не просто быть в тренде, а создавать решения, которые работают на завтра. Кроме того, мы запускаем отдельные специализированные программы в области технологий:
+              <p class="text-sm leading-[140%] mb-5 lg:max-w-[60%] ">
+                Наши студенты осваивают дисциплины, которые помогают не просто «быть в тренде»,
+                а формировать решения, применимые в бизнесе и науке уже сегодня.
+              </p>
+              <p class="text-sm leading-[140%] lg:max-w-[60%] news-content">
+                Ключевые направления:<br>
+                <ul>
+                  <li><span class="font-semibold">Промт-инжиниринг</span>  — работа с языковыми моделями и генеративными инструментами.</li>
+                  <li><span class="font-semibold">Дизайн-мышление</span>  — методология поиска инновационных решений.</li>
+                  <li><span class="font-semibold">Анализ данных</span>  — от базовых методов до бизнес-аналитики и BI-систем.</li>
+                </ul>
+              </p>
+              <p class="text-sm leading-[140%] lg:max-w-[60%] ">
+                Эти компетенции формируют основу профессиональной устойчивости выпускников и позволяют им
+                интегрировать технологии в реальные проекты и управленческие задачи.
+
               </p>
             </div>
             <UIArrowButton is-dark/>
@@ -96,12 +111,26 @@
           <CardBase  variant="primary">
             <div class="h-full flex flex-col items-start justify-between">
               <div class="">
-                <div class="flex gap-[7px] mb-[30px]">
-                  <UIBadge  label="Роботизация" variant="contrast"/>
+                <div class="flex flex-wrap gap-[7px] mb-[30px]">
+                  <UIBadge label="Превентивная медицина" variant="contrast"/>
+                  <UIBadge label="Нейронауки" variant="contrast"/>
+                  <UIBadge label="Биотехнологии" variant="contrast"/>
+                  <UIBadge label="HealthTech" variant="contrast"/>
+
                 </div>
                 <TypingText26 text="Медицина будущего" extra_class="mb-5"/>
-                <p class="text-sm leading-[140%] max-w-[80%]">
-                  Эти знания помогают нашим студентам не просто быть в тренде, а создавать решения, которые работают на завтра. Кроме того, мы запускаем отдельные специализированные программы в области технологий:
+                <p class="text-sm leading-[140%] mb-5 max-w-[80%]">
+                  Здоровье человека становится главным ресурсом XXI века. Мы создаём программы, которые соединяют превентивную медицину, нейронауки и психофизиологию.
+                </p>
+                <p class="text-sm leading-[140%] mb-5 max-w-[80%]">
+                  Студенты изучают, как современные технологии помогают в диагностике, управлении состоянием и создании персонализированных решений для здоровья.
+
+                </p>
+                <p class="text-sm leading-[140%] mb-5 max-w-[80%]">
+                  <span class="font-semibold">Особенность подхода</span>
+                   — практикоориентированные исследования, работа с экспертами в области медицины, биотехнологий и
+                  психологии, а также формирование новых моделей профилактики и поддержки здоровья.
+
                 </p>
               </div>
               <UIArrowButton />
@@ -109,17 +138,25 @@
           </CardBase>
       </div>
     </div>
-    <div class="grid grid-cols-12 gap-5 h-auto lg:h-[430px]">
+    <div class="grid grid-cols-12 gap-5 h-auto ">
       <div class="col-span-12 lg:col-span-4">
         <CardBase  variant="dark">
           <div class="h-full flex flex-col items-start justify-between">
-            <div class="">
-              <div class="flex gap-[7px] mb-[30px]">
-                <UIBadge  label="Управление производством" variant="contrast"/>
+            <div class="mb-5">
+              <div class="flex flex-wrap gap-[7px] mb-[30px]">
+                <UIBadge  label="Стратегический менеджмент" variant="contrast"/>
+                <UIBadge  label="Лидерство" variant="contrast"/>
+                <UIBadge  label="Маркетинг" variant="contrast"/>
               </div>
               <TypingText26 text="Менеджмент" extra_class="mb-5"/>
+              <p class="text-sm leading-[140%] mb-5 max-w-[80%]">
+                Современный менеджмент — это не только управление процессами, но и способность адаптировать организации к быстро меняющимся условиям.
+                Программы Академии в этой области помогают студентам выстраивать эффективные бизнес-модели, управлять производством и проектами, внедрять инновации и формировать устойчивые команды.
+
+              </p>
               <p class="text-sm leading-[140%] max-w-[80%]">
-                Эти знания помогают нашим студентам не просто быть в тренде, а создавать решения, которые работают на завтра. Кроме того, мы запускаем отдельные специализированные программы в области технологий:
+                Особое внимание уделяется практическим инструментам управления: от систем бизнес-процессов до стратегических решений, которые определяют долгосрочный рост компании.
+
               </p>
             </div>
             <UIArrowButton />
@@ -129,19 +166,22 @@
       </div>
       <div class="col-span-12 lg:col-span-8">
         <CardBase >
-          <div class="h-full flex flex-col items-start justify-between">
+          <div class="h-full flex flex-wrap flex-col items-start justify-between">
             <div class="">
               <div class="flex flex-wrap gap-[7px] mb-[30px]">
-                <UIBadge label="Промт-инжиниринг" variant="primary"/>
-                <UIBadge label="Пизайн-мышление" variant="primary"/>
-                <UIBadge label="Анализ данных" variant="primary"/>
+                <UIBadge label="Наука и бизнес" variant="primary"/>
+                <UIBadge label="Инновации" variant="primary"/>
+                <UIBadge label="Мета-компетенции" variant="primary"/>
+
               </div>
               <TypingText26 text="Междисциплинарные исследования" extra_class="mb-5"/>
-              <p class="text-sm leading-[140%] mb-5 max-w-[60%]">
-                Во все программы Академии уже встроены модули по современным технологиям и искусственному интеллекту, потому что без их интеграции невозможно представить будущее профессии.
+              <p class="text-sm leading-[140%] mb-5 lg:max-w-[60%]">
+                Будущее науки и бизнеса рождается на пересечении дисциплин. В Академии мы развиваем исследования, объединяющие психологию, менеджмент, технологии и социальные науки. Такой подход позволяет находить решения сложных задач — от диагностики личности и лидерства до разработки новых моделей управления и инновационных продуктов.
+
               </p>
-              <p class="text-sm leading-[140%] max-w-[60%] ">
-                Эти знания помогают нашим студентам не просто быть в тренде, а создавать решения, которые работают на завтра. Кроме того, мы запускаем отдельные специализированные программы в области технологий:
+              <p class="text-sm leading-[140%] lg:max-w-[60%] ">
+                Наши студенты вовлекаются в проекты, где теория сразу превращается в практику: они учатся работать в мультидисциплинарных командах, публиковаться в научных изданиях и создавать прикладные решения для компаний и общества.
+
               </p>
             </div>
             <UIArrowButton is-dark/>

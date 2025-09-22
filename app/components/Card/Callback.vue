@@ -1,20 +1,37 @@
 <script setup lang="ts">
-const email = ref()
+
 const agreed = ref(false)
-defineProps(['variant'])
+const is_send = ref(false)
+const loading = ref(false)
+const props = defineProps(['variant','name'])
+const {$api} = useNuxtApp()
+const form_data =ref({
+  fio:null,
+  email:null,
+  phone:null,
+  page:props.name
+})
+
+const send = async () => {
+  loading.value = true
+ await $api.data.send_l_form(form_data.value)
+  is_send.value =  true
+  loading.value = false
+}
+
 </script>
 
 <template>
   <CardBase :variant="variant">
-
+    <div v-if="!is_send">
     <TypingText26 text="Узнать подробности или задать вопрос"
                   extra_class="leading-[120%] tracking-[-0.05rem] mb-[30px]"/>
     <div class="space-y-3 mb-[30px]">
-      <UIInput v-model="email" placeholder="ФИО"/>
-      <UIInput v-model="email" placeholder="Ваш email"/>
-      <UIInput v-model="email" placeholder="Ваш вопрос"/>
-      <button class="flex items-center justify-between w-full text-[#2c2c2c] text-sm px-4 py-[18px] rounded-[5px] bg-white">
-        Подписаться на рассылку
+      <UIInput v-model="form_data.fio" placeholder="ФИО"/>
+      <UIInput v-model="form_data.email" placeholder="Ваш email"/>
+      <UIInput v-model="form_data.phone" placeholder="Ваш телефон"/>
+      <button @click="send" :disabled="!agreed || loading" class="flex items-center justify-between w-full text-[#2c2c2c] text-sm px-4 py-[18px] rounded-[5px] bg-white">
+        Отправить вопрос
         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M11.3536 4.35355C11.5488 4.15829 11.5488 3.84171 11.3536 3.64645L8.17157 0.464466C7.97631 0.269204 7.65973 0.269204 7.46447 0.464466C7.2692 0.659728 7.2692 0.976311 7.46447 1.17157L10.2929 4L7.46447 6.82843C7.2692 7.02369 7.2692 7.34027 7.46447 7.53553C7.65973 7.7308 7.97631 7.7308 8.17157 7.53553L11.3536 4.35355ZM0 4V4.5H11V4V3.5H0V4Z" fill="#2C2C2C"/>
         </svg>
@@ -25,8 +42,10 @@ defineProps(['variant'])
                   contract
                   label="Нажимая кнопку «Подписаться на рассылку» я подтверждаю,
                   что ознакомился с Политикой конфиденциальности и Правилами обработки персональных данных" />
-
-
+    </div>
+    </div>
+    <div v-else>
+      <TypingText26 text="Форма отправлена"/>
     </div>
     <template #image>
       <div class="absolute bottom-0 right-0 z-[-1]">
@@ -94,6 +113,7 @@ defineProps(['variant'])
       </div>
 
     </template>
+
   </CardBase>
 </template>
 

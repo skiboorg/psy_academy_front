@@ -3,6 +3,7 @@ defineProps(['item'])
 </script>
 
 <template>
+
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
   <div class="order-1 lg:order-0 grid grid-cols-12 bg-white rounded-[5px] p-[30px] ">
     <div class="col-span-2 lg:col-span-1">
@@ -20,13 +21,13 @@ defineProps(['item'])
       </svg>
 
     </div>
-    <div class="col-start-2 col-end-10  pt-[70px]">
+    <div class="col-start-2 col-end-10  pt-[70px] self-end">
       <p class="text-primary text-lg font-semibold mb-2 ">{{item.author}}</p>
       <p class="text-sm text-#727272">{{item.text1}}</p>
     </div>
   </div>
 
-    <img class="order-0 lg:order-1 w-full h-full object-cover" :src="item.image" alt="">
+    <img class="order-0 lg:order-1 w-full h-auto lg:h-[516px] object-cover" :src="item.top_image" alt="">
 
 </div>
 </template>

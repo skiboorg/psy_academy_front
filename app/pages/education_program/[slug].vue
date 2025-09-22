@@ -7,6 +7,12 @@ definePageMeta({
 const {$api} = useNuxtApp()
 const {slug} = useRoute().params
 const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.program(slug)))
+const visible = useState('callbackModalVisible')
+const form_type = useState('callbackModalFormType')
+const showCallBackModal = (formtype) => {
+  visible.value = true
+  form_type.value = {formtype,name:'Программа: ' + program.value.name}
+}
 
 </script>
 
@@ -33,7 +39,7 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.program(
         <CardCourseInfoItem class="lg:col-span-2" title="Онлайн" :text="program.is_online ? 'Да' : 'Нет'"/>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
-        <RoundedButton is_hero>Подать заявление</RoundedButton>
+        <RoundedButton is_hero @click="showCallBackModal('primary')">Подать заявление</RoundedButton>
         <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
       </div>
 </div>
@@ -41,9 +47,10 @@ const {data:program} = await useHttpRequest( useAsyncData(()=>$api.data.program(
   </BlockSection>
   <BlockSection title_text="О программе">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-      <CardBase v-for="card in program.about_items" :variant="card.block_type" >
+      <CardBase v-for="card in program.about_items" :variant="card.block_type" extra_class="lg:!min-h-[320px]">
         <TypingText26 :text="card.name" extra_class="mb-5"/>
         <div class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></div>
+
         <template v-if="card.svg" #image>
           <div class="absolute right-0 bottom-0" v-html="card.svg"></div>
         </template>
