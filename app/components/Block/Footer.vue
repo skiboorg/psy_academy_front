@@ -24,7 +24,7 @@ const showCallBackModal = (formtype) => {
         <div class="bg-primary p-3 flex flex-col items-start justify-between rounded-md h-[150px] lg:h-[300px]">
           <p class="text-white text-xl">Написать нам на почту</p>
           <div class="w-full flex items-center justify-between">
-            <a class="text-sm opacity-50 text-white " href="mailto:email@email.email">email@email.email</a>
+            <a class="text-sm opacity-50 text-white " href="mailto:info@ipb-academy.ru">info@ipb-academy.ru</a>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M39.4999 19.9999C39.4999 30.7695 30.7695 39.4999 19.9999 39.4999C9.23042 39.4999 0.5 30.7695 0.5 19.9999C0.5 9.23042 9.23042 0.5 19.9999 0.5C30.7695 0.5 39.4999 9.23042 39.4999 19.9999Z" stroke="white"/>
               <path d="M12.667 27.3334L27.3336 12.6667M27.3336 12.6667V27.3334M27.3336 12.6667H12.667" stroke="white" stroke-linecap="square"/>
@@ -42,8 +42,8 @@ const showCallBackModal = (formtype) => {
         <div class="flex flex-col items-start justify-between">
           <div class="flex flex-col items-start mb-3 lg:mb-0">
             <p class="text-sm text-[#727272] mb-3 lg:mb-6">СВЯЗАТЬСЯ С НАМИ</p>
-            <a class="text-xl font-semibold"  href="tel:+79991112233">+79991112233</a>
-            <a class="text-xl font-semibold"  href="mailto:email@email.email">email@email.email</a>
+            <a class="text-xl font-semibold"  href="tel:+79932682717">+7 (993) 268 27-17</a>
+            <a class="text-xl font-semibold"  href="mailto:info@ipb-academy.ru">info@ipb-academy.ru</a>
           </div>
 <!--          <div class="">-->
 <!--            <p class="text-sm text-[#727272] mb-3 lg:mb-6">АДРЕС</p>-->

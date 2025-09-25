@@ -16,6 +16,6 @@ definePageMeta({
     <BlockQuote :show_arrows="true" text="Сегодня недостаточно просто адаптироваться к изменениям. Наши студенты учатся мыслить системно, соединять психологию, бизнес и технологии, чтобы создавать решения, которые формируют будущее."/>
   </BlockSection>
   <PageBlockStrategyTarget/>
-  <PageBlockPartners/>
+<!--  <PageBlockPartners/>-->
   <PageBlockNews/>
 </template>

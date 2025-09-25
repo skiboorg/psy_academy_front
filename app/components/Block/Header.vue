@@ -38,7 +38,7 @@ const links = [
       </nav>
       <div class="hidden xl:block">
         <p>Приемная комиссия</p>
-        <a href="tel:+7 (999) 999 99 99" target="_blank">+7 (999) 999 99 99</a>
+        <a href="tel:+79932682717" target="_blank">+7 (993) 268 27-17</a>
       </div>
       <div class="flex gap-3">
         <UIRoundedButton class="hidden xl:flex" :is_hero="isHero">Личный кабинет</UIRoundedButton>
@@ -110,7 +110,7 @@ const links = [
 
       <div class="">
         <p class="text-sm">Приемная комиссия</p>
-        <a class="text-xl font-semibold text-primary" href="tel:+7 (999) 999 99 99" target="_blank">+7 (999) 999 99 99</a>
+        <a class="text-xl font-semibold text-primary" href="tel:+79932682717" target="_blank">+7 (993) 268 27-17</a>
       </div>
 
     </div>
