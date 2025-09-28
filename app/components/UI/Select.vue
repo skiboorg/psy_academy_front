@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
         :class="variantClasses[props.variant]"
         @click="toggle"
     >
-      <span class="text-sm">
+      <span class="text-sm truncate max-w-[100%]">
         {{ props.options.find(o => o.value === props.modelValue)?.label || props.placeholder }}
       </span>
       <svg

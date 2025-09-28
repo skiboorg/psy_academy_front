@@ -26,24 +26,27 @@ const {data:lectures} = await useHttpRequest( useAsyncData(()=>$api.data.lecture
       Здесь вы можете слушать лекции и практикумы в онлайн и офлайн-формате, участвовать в мастер-классах и авторских воркшопах, знакомиться с новыми идеями и получать практические инструменты, находить контакты и возможности для профессионального роста.
 
     </p>
-    <div class="flex flex-wrap gap-2 w-full mb-10">
-      <UISelect
-        :options="options"
-        v-model="val1"
-        variant="primary"
-        placeholder="Даты проведения"
-    />
-      <UIRadio
-          v-model="val2"
-          :options="[
+    <div class="w-full overflow-x-auto mb-10 pb-3 lg:pb-0">
+      <div class="flex gap-2   ">
+        <UISelect
+            :options="options"
+            v-model="val1"
+            variant="primary"
+            placeholder="Даты проведения"
+        />
+        <UIRadio
+            v-model="val2"
+            :options="[
     { label: 'Только бесплатные', value: 'yes' },
     { label: 'Серия мероприятий', value: 'no' },
 
   ]"/>
-      <UISelect v-model="val2"  :options="options" placeholder="Формат" />
-      <UISelect v-model="val2"  :options="options" placeholder="Вид мероприятия" />
-      <UISelect v-model="val2"  :options="options" placeholder="Направления" />
+        <UISelect v-model="val2"  :options="options" placeholder="Формат" />
+        <UISelect v-model="val2"  :options="options" placeholder="Вид мероприятия" />
+        <UISelect v-model="val2"  :options="options" placeholder="Направления" />
+      </div>
     </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <template v-for="(lecture,index) in lectures" :key="index">
         <CardLecture v-if="index !== 3" :lecture="lecture"/>

@@ -3,8 +3,8 @@ type Visible = { sm: boolean; md: boolean; lg: boolean };
 type Card = { title: string; text: string; to: string; visible: Visible };
 import {Carousel, Pagination, Slide} from "vue3-carousel";
 const carouselConfig = {
-  itemsToShow: 1,
-  wrapAround: true,
+  itemsToShow: 1.2,
+  wrapAround: false,
   //autoplay: 3000,
   pauseAutoplayOnHover: true,
   //slideEffect:'fade'

@@ -41,12 +41,12 @@ const isSelected = (value: string | number) => {
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-3 flex-wrap">
+  <div class="flex  gap-3 ">
     <button
         v-for="option in props.options"
         :key="option.value"
         type="button"
-        class="px-4 py-2 text-sm font-medium transition rounded-[40px]"
+        class="px-4 py-2 text-sm font-medium transition rounded-[40px] truncate max-w-[100%]"
         :class="[
         isSelected(option.value)
           ? 'bg-[#B71D31] text-white'

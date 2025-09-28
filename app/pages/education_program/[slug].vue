@@ -19,7 +19,7 @@ const showCallBackModal = (formtype) => {
 <template>
 
   <BlockHeader/>
-  <BlockSection extra_class="h-[970px] lg:h-[870px] bg-[url('/slug.png')] bg-cover bg-center relative overflow-hidden pt-[168px]
+  <BlockSection extra_class="h-auto lg:h-[870px] bg-[url('/slug.png')] bg-cover bg-center relative overflow-hidden pt-[168px]
    pb-[30px] lg:pb-[100px]">
     <div class="h-full flex flex-col items-start justify-between">
       <BlockBreadcrumbs :not_use_container="true" :items="[
@@ -29,9 +29,9 @@ const showCallBackModal = (formtype) => {
       />
       <div>
         <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
-        <p class="text-white text-lg leading-[120%] lg:max-w-[35%]">{{program.short_description}}</p>
+        <p class="text-white text-lg leading-[120%] lg:max-w-[35%] mb-4 lg:mb-0">{{program.short_description}}</p>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5">
+      <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5 mb-4 lg:mb-0">
         <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format?.name"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Кол-во часов" :text="program.duration"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Стоимость" :text="program.price"/>
@@ -65,7 +65,7 @@ const showCallBackModal = (formtype) => {
   </BlockSection>
   <BlockSection v-if="program.video">
     <div class="grid grid-cols-12 gap-5 h-[430px]">
-      <div class="col-span-5">
+      <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
           <UIBadge class="mb-[30px]" label="Нейропсихология"/>
           <TypingText26 text="Посмотрите видео о программе обучения" extra_class="mb-5"/>
@@ -137,7 +137,7 @@ const showCallBackModal = (formtype) => {
           </template>
         </CardBase>
       </div>
-      <div class="col-span-7">
+      <div class="col-span-12 lg:col-span-7">
         <video
             class="h-full w-full rounded-[5px] object-cover"
             controls
