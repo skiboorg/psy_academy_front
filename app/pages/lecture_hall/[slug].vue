@@ -38,9 +38,9 @@ const showCallBackModal = (formtype) => {
 
         <CardCourseInfoItem class="lg:col-span-2" title="Нагрузка" :text="program.learn_time"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Доступ" :text="program.access"/>
-        <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format_txt"/>
+        <CardCourseInfoItem class="lg:col-span-2" title="Аттестат" :text="program.format_txt"/>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[40%]">
         <RoundedButton is_hero @click="showCallBackModal('primary')">Приобрести запись</RoundedButton>
         <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
       </div>

@@ -1,26 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap')
+@font-face
+  font-family: 'HelveticaNeue'
+  src: url('/font/HelveticaNeue-Light.otf')
+  font-weight: 400
+  font-style: normal
+@font-face
+  font-family: 'HelveticaNeue'
+  src: url('/font/HelveticaNeue-Medium.otf')
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: 'HelveticaNeue'
+  src: url('/font/HelveticaNeue-Bold.otf')
+  font-weight: 500
+  font-style: normal
+
 .work-sans-font
-  font-family: "Work Sans", sans-serif
+  font-family: 'HelveticaNeue'
+  //font-family: "Work Sans", sans-serif
   font-optical-sizing: auto
   font-style: normal
 
 .inter-sans-font
-  font-family: "Inter", sans-serif
+  font-family: 'HelveticaNeue'
+  //font-family: "Inter", sans-serif
   font-optical-sizing: auto
   font-style: normal
 
 
 body
-  font-family: "Onest", sans-serif
+  font-family: "HelveticaNeue", sans-serif
   font-optical-sizing: auto
-  font-weight: 500
+  font-weight: 400
   font-size: 16px
   font-style: normal
   font-variation-settings: "wdth" 100
   background-color: #f6f6f6
   color: #2C2C2C
-  letter-spacing: -0.05rem
+  //letter-spacing: -0.03rem
 
 ::-webkit-scrollbar
   width: 5px
@@ -77,3 +94,9 @@ body
 button
   &:disabled
     opacity: 0.8
+
+@media screen and (max-width: 990px)
+  .svg
+    svg
+      width: 70% !important
+      height: auto !important

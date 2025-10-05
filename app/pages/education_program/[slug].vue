@@ -36,7 +36,7 @@ const showCallBackModal = (formtype) => {
         <CardCourseInfoItem class="lg:col-span-2" title="Кол-во часов" :text="program.duration"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Стоимость" :text="program.price"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Дата курса" :text="program.start_date"/>
-        <CardCourseInfoItem class="lg:col-span-2" title="Онлайн" :text="program.is_online ? 'Да' : 'Нет'"/>
+        <CardCourseInfoItem class="lg:col-span-2" title="Аттестат" text="Да"/>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
         <RoundedButton is_hero @click="showCallBackModal('primary')">Подать заявление</RoundedButton>
@@ -45,25 +45,7 @@ const showCallBackModal = (formtype) => {
 </div>
 
   </BlockSection>
-  <BlockSection title_text="О программе">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-      <CardBase v-for="card in program.about_items" :variant="card.block_type" extra_class="lg:!min-h-[320px]">
-        <TypingText26 :text="card.name" extra_class="mb-5"/>
-        <div class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></div>
-
-        <template v-if="card.svg" #image>
-          <div class="absolute right-0 bottom-0" v-html="card.svg"></div>
-        </template>
-      </CardBase>
-
-    </div>
-
-  </BlockSection>
-  <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
-                :file="program.study_plan ? program.study_plan : null">
-  <BlockCourseInfoPanel :show_index="true" :items="program.modules"/>
-  </BlockSection>
-  <BlockSection v-if="program.video">
+  <BlockSection v-if="program.video || program.video_url">
     <div class="grid grid-cols-12 gap-5 h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
@@ -139,18 +121,66 @@ const showCallBackModal = (formtype) => {
       </div>
       <div class="col-span-12 lg:col-span-7">
         <video
+            v-if="program.video"
             class="h-full w-full rounded-[5px] object-cover"
             controls
             poster="~assets/images/video.png"
         >
-          <source :src="program.video" type="video/mp4">
+          <source :src="program.video " type="video/mp4">
         </video>
+        <div class="" v-if="program.video_url" v-html="program.video_url"></div>
       </div>
+    </div>
+  </BlockSection>
+  <BlockSection  title_text="О программе">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <CardBase v-for="card in program.about_items" :variant="card.block_type" extra_class="lg:!min-h-[320px]">
+        <TypingText26 :text="card.name" extra_class="mb-5"/>
+        <div class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></div>
+
+        <template v-if="card.svg" #image>
+          <div class="absolute right-0 bottom-0" v-html="card.svg"></div>
+        </template>
+      </CardBase>
+
+    </div>
+
+  </BlockSection>
+  <BlockQuote class="mb-10 lg:mb-20" v-if="program.quote_text" :text="program.quote_text"/>
+  <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
+                :file="program.study_plan ? program.study_plan : null">
+  <BlockCourseInfoPanel :show_index="true" :items="program.modules"/>
+  </BlockSection>
+  <BlockSection title_text="Преимущества программы">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <CardBase v-for="item in program.p_features">
+        <UIBadge class="mb-7" variant="primary" :label="item.tag"/>
+        <p class="text-lg font-semibold mb-5">{{item.name}}</p>
+        <p>{{item.text}}</p>
+      </CardBase>
+    </div>
+
+  </BlockSection>
+  <BlockSection title_text="Кому подойдет программа">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <CardBase v-for="item in program.p_for_items">
+        <div class="grid grid-cols-2 lg:grid-cols-1">
+          <div class="order-1 ld:order-0">
+            <p class="text-lg font-semibold mb-5">{{item.name}}</p>
+            <p class="mb-8">{{item.text}}</p>
+          </div>
+          <p class="order-0 lg:order-1 svg" v-html="item.svg"></p>
+        </div>
+
+
+      </CardBase>
     </div>
   </BlockSection>
 
 </template>
 
-<style scoped>
+<style lang="sass">
+
 
 </style>
