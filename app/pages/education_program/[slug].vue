@@ -15,7 +15,6 @@ const showCallBackModal = (formtype) => {
 }
 
 </script>
-
 <template>
 
   <BlockHeader/>
@@ -29,14 +28,14 @@ const showCallBackModal = (formtype) => {
       />
       <div>
         <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
-        <p class="text-white text-lg leading-[120%] lg:max-w-[35%] mb-4 lg:mb-0">{{program.short_description}}</p>
+        <p class="text-white text-lg leading-[120%] lg:max-w-[70%] mb-4 lg:mb-0">{{program.short_description}}</p>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5 mb-4 lg:mb-0">
         <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format?.name"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Кол-во часов" :text="program.duration"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Стоимость" :text="program.price"/>
         <CardCourseInfoItem class="lg:col-span-2" title="Дата курса" :text="program.start_date"/>
-        <CardCourseInfoItem class="lg:col-span-2" title="Аттестат" text="Да"/>
+        <CardCourseInfoItem class="lg:col-span-2" :title="program.attestat_title" :text="program.attestat_label"/>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
         <RoundedButton is_hero @click="showCallBackModal('primary')">Подать заявление</RoundedButton>
@@ -49,9 +48,9 @@ const showCallBackModal = (formtype) => {
     <div class="grid grid-cols-12 gap-5 h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
-          <UIBadge class="mb-[30px]" label="Нейропсихология"/>
-          <TypingText26 text="Посмотрите видео о программе обучения" extra_class="mb-5"/>
-          <p class="text-sm leading-[140%] max-w-[80%]">{{program.video_text}}</p>
+<!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
+<!--          <TypingText26 text="Посмотрите видео о программе обучения" extra_class="mb-5"/>-->
+          <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
           <template  #image>
             <div class="absolute right-0 bottom-0" >
               <svg width="424" height="358" viewBox="0 0 424 358" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +131,8 @@ const showCallBackModal = (formtype) => {
       </div>
     </div>
   </BlockSection>
-  <BlockSection  title_text="О программе">
+<!--  title_text="О программе"-->
+  <BlockSection  >
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="card in program.about_items" :variant="card.block_type" extra_class="lg:!min-h-[320px]">
         <TypingText26 :text="card.name" extra_class="mb-5"/>
@@ -165,12 +165,12 @@ const showCallBackModal = (formtype) => {
   <BlockSection title_text="Кому подойдет программа">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="item in program.p_for_items">
-        <div class="grid grid-cols-2 lg:grid-cols-1">
+        <div class="grid grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-8">
           <div class="order-1 ld:order-0">
-            <p class="text-lg font-semibold mb-5">{{item.name}}</p>
-            <p class="mb-8">{{item.text}}</p>
+            <p class="text-lg font-medium leading-[110%] mb-5">{{item.name}}</p>
+            <p >{{item.text}}</p>
           </div>
-          <p class="order-0 lg:order-1 svg" v-html="item.svg"></p>
+          <img class="order-0 lg:order-1 " :src="item.image"></img>
         </div>
 
 

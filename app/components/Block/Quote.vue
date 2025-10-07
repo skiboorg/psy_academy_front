@@ -3,6 +3,7 @@ defineProps(['text','show_marks','show_arrows'])
 </script>
 
 <template>
+  <div class="container">
 <div class="grid grid-cols-12">
   <div class="col-span-12 lg:col-start-3 lg:col-end-13">
     <div class="flex gap-5 ">
@@ -32,6 +33,7 @@ defineProps(['text','show_marks','show_arrows'])
     </div>
   </div>
 </div>
+  </div>
 </template>
 
 <style scoped>

@@ -22,6 +22,6 @@ defineProps(['item','index','show_index'])
         <p class="text-lg font-semibold">{{item.name}}</p>
       </div>
     </template>
-    <div class="m-0" v-html="item.description"></div>
+    <div class="m-0 lg:max-w-[85%]" v-html="item.description"></div>
   </Panel>
 </template>
