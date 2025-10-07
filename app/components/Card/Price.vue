@@ -3,27 +3,33 @@ defineProps(['program'])
 </script>
 
 <template>
-  <CardBase>
-    <div class="flex gap-[7px] flex-wrap mb-[30px]">
+  <CardBase class="h-full flex flex-col items-start justify-between ">
+    <div class="">
+      <div class="flex gap-[7px] flex-wrap mb-[30px]">
 
-      <UIBadge v-for="tag in program.tags" :label="tag.label" />
+        <UIBadge v-for="tag in program.tags" :label="tag.label" />
 
+      </div>
+      <p class="font-semibold text-[20px] mb-5 leading-[100%]">{{program.name}}</p>
+      <p class="text-sm text-[#727272] leading-[140%] mb-5">{{program.short_description}}</p>
     </div>
-    <p class="font-semibold text-lg mb-5">{{program.name}}</p>
-    <p class="text-sm text-[#727272] leading-[140%] mb-5">{{program.short_description}}</p>
+
+
+  <div class="">
     <div class="grid grid-cols-2 gap-5 mb-[30px]">
       <div class="">
-        <p class="text-sm text-[#727272] leading-[120%] ">Стоимость</p>
-        <p class="text-sm  leading-[120%] mb-5">{{program.price}}</p>
+        <p class="!text-sm text-[#727272] font-light leading-[120%] ">Стоимость:</p>
+        <p class="  leading-[120%] mb-5">{{program.price}}</p>
       </div>
       <div class="">
-        <p class="text-sm text-[#727272] leading-[120%] ">Форма обучения</p>
-        <p class="text-sm  leading-[120%] mb-5 font-medium">{{program.format?.name}}</p>
+        <p class="!text-sm text-[#727272] font-light leading-[120%] ">Форма обучения:</p>
+        <p class="  leading-[120%] mb-5 font-medium">{{program.format?.name}}</p>
       </div>
     </div>
     <UIButton :primary="false" show_left_icon>
       <nuxt-link :to="`/education_program/${program.slug}`">Подробнее</nuxt-link>
       </UIButton>
+    </div>
   </CardBase>
 
 </template>

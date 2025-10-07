@@ -203,7 +203,7 @@ const  modules = [
 
     </div>
   </BlockSection>
-  <PageBlockPartners/>
+<!--  <PageBlockPartners/>-->
   <PageBlockNews/>
   <BlockSection title_text="Сведения об образовательной организации">
   <BlockCourseInfoPanel :show_index="false" :items="modules"/>

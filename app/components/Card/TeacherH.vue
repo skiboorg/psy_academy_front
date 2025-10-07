@@ -8,7 +8,7 @@ defineProps(['item'])
 <CardBase variant="teacher">
   <div class=" h-full flex flex-col items-start justify-between gap-10 lg:gap-0">
     <div class="order-1">
-      <TypingText26 :text="item.full_name" extra_class="mb-3 max-w-[60%]"/>
+      <TypingText26 :text="item.full_name" extra_class="mb-3 max-w-[70%]"/>
       <UIBadge :label="item.position"/>
     </div>
     <div class="order-2">

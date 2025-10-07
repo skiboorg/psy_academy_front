@@ -24,11 +24,11 @@ const items = [
   <div class="col-span-12 lg:col-span-8">
     <div class="space-y-5">
       <CardBase v-for="item in items">
-        <div class="flex lg:grid grid-cols-12 items-start lg:items-center ">
+        <div class="flex lg:grid grid-cols-12 items-start  ">
           <div class="col-span-2  lg:justify-self-center " v-html="item.icon"></div>
           <div class="col-span-10  max-w-[65%] lg:max-w-max">
             <TypingText26 extra_class="lg:max-w-[70%] mb-5" :text="item.title"/>
-            <p class="leading-[140%] lg:max-w-[70%]">{{item.text}}</p>
+            <p class="leading-[140%] ">{{item.text}}</p>
           </div>
         </div>
       </CardBase>

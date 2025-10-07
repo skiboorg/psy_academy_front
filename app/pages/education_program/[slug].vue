@@ -18,7 +18,7 @@ const showCallBackModal = (formtype) => {
 <template>
 
   <BlockHeader/>
-  <BlockSection extra_class="h-auto lg:h-[870px] bg-[url('/slug.png')] bg-cover bg-center relative overflow-hidden pt-[168px]
+  <BlockSection extra_class="!mb-20 h-auto lg:h-[870px] bg-[url('/slug.png')] bg-cover bg-center relative overflow-hidden pt-[168px]
    pb-[30px] lg:pb-[100px]">
     <div class="h-full flex flex-col items-start justify-between">
       <BlockBreadcrumbs :not_use_container="true" :items="[
@@ -28,6 +28,7 @@ const showCallBackModal = (formtype) => {
       />
       <div>
         <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
+
         <p class="text-white text-lg leading-[120%] lg:max-w-[70%] mb-4 lg:mb-0">{{program.short_description}}</p>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5 mb-4 lg:mb-0">
@@ -44,12 +45,12 @@ const showCallBackModal = (formtype) => {
 </div>
 
   </BlockSection>
-  <BlockSection v-if="program.video || program.video_url">
+  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url">
     <div class="grid grid-cols-12 gap-5 h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
 <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
-<!--          <TypingText26 text="Посмотрите видео о программе обучения" extra_class="mb-5"/>-->
+          <TypingText26 text="О программе обучения" extra_class="mb-5"/>
           <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
           <template  #image>
             <div class="absolute right-0 bottom-0" >
@@ -165,13 +166,16 @@ const showCallBackModal = (formtype) => {
   <BlockSection title_text="Кому подойдет программа">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="item in program.p_for_items">
-        <div class="grid grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-8">
-          <div class="order-1 ld:order-0">
-            <p class="text-lg font-medium leading-[110%] mb-5">{{item.name}}</p>
-            <p >{{item.text}}</p>
+        <div class="flex flex-col items-start justify-between gap-5 lg:gap-8">
+
+            <div class="order-1 ld:order-0">
+              <p class="text-lg font-medium leading-[110%] mb-5">{{item.name}}</p>
+              <p >{{item.text}}</p>
+            </div>
+            <img class="order-0 lg:order-1 lg:w-full" :src="item.image"></img>
           </div>
-          <img class="order-0 lg:order-1 " :src="item.image"></img>
-        </div>
+
+
 
 
       </CardBase>

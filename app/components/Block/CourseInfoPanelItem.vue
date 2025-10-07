@@ -19,7 +19,7 @@ defineProps(['item','index','show_index'])
     <template #header>
       <div class="flex flex-col gap-5 items-start">
         <UIBadge v-if="show_index" :label="`Модуль ${index + 1}`"/>
-        <p class="text-lg font-semibold">{{item.name}}</p>
+        <p class="text-lg text-grey2c font-semibold">{{item.name}}</p>
       </div>
     </template>
     <div class="m-0 lg:max-w-[85%]" v-html="item.description"></div>

@@ -8,9 +8,10 @@ defineProps(['title','text','to','isLast'])
   :class="isLast ? '1border-none ' : ''"
   >
     <div class="mb-9">
-      <h3 class="font-semibold mb-3">{{title}}</h3>
+      <h3 class="font-semibold mb-3 min-h-[50px]">{{title}}</h3>
       <p class="text-sm">{{text}}</p>
     </div>
+
     <UIArrowButton extra_class="!mt-0" :to="to"/>
   </div>
 </template>
