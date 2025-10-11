@@ -259,10 +259,7 @@ const showCallBackModal = (formtype) => {
 
       </CardBase>
     </div>
-    <div class="flex gap-5">
-      <UIRoundedButton>Подать заявление</UIRoundedButton>
-      <UIRoundedButton outline primary >Задать вопрос</UIRoundedButton>
-    </div>
+
   </BlockSection>
   <BlockHowToApply/>
 </template>
