@@ -4,7 +4,7 @@ const props = defineProps({
   dot_color: { type: String, default: '#B71D31' },
   with_dot: { type: Boolean, default: false },
   variant: {
-    type: String as () => 'default' | 'primary' | 'contrast',
+    type: String as () => 'default' | 'primary' | 'contrast' | 'outline',
     default: 'default'
   },
   size: {
@@ -16,7 +16,8 @@ const props = defineProps({
 const variantClasses = {
   default: 'bg-[#F1F1F1] text-gray-800',
   primary: 'bg-primary text-white',
-  contrast: 'bg-white text-[#2c2c2c]'
+  contrast: 'bg-white text-[#2c2c2c]',
+  outline: 'border border-[#848484] text-[#848484]',
 }
 
 const sizeClasses = {

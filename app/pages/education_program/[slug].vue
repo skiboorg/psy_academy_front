@@ -163,6 +163,7 @@ const showCallBackModal = (formtype) => {
     </div>
 
   </BlockSection>
+
   <BlockSection title_text="Кому подойдет программа">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="item in program.p_for_items">
@@ -181,7 +182,89 @@ const showCallBackModal = (formtype) => {
       </CardBase>
     </div>
   </BlockSection>
+  <BlockSection :title_text="program.caiere_title || 'Карьера после выпуска'">
+    <CardBase extra_class="mb-5">
+      <UIBadge class="mb-10" variant="outline" :label="program.caiere_tag"/>
+      <TypingText26 extra_class="lg:max-w-[40%]" :text="program.caiere_text"/>
+      <template #image>
+        <div class="absolute right-[-50%] lg:right-[10%] bottom-0">
+          <svg width="517" height="226" viewBox="0 0 517 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.05">
+              <g filter="url(#filter0_d_789_3818)">
+                <path d="M172.524 -69.6602L10.0703 126.61L172.524 322.881L334.978 126.61L172.524 -69.6602Z" stroke="#2C2C2C" stroke-width="8" shape-rendering="crispEdges"/>
+              </g>
+              <g filter="url(#filter1_d_789_3818)">
+                <path d="M287.407 -69.6602L124.953 126.61L287.407 322.881L449.861 126.61L287.407 -69.6602Z" stroke="#2C2C2C" stroke-width="8" shape-rendering="crispEdges"/>
+              </g>
+              <g filter="url(#filter2_d_789_3818)">
+                <path d="M229.964 -69.6602L67.5098 126.61L229.964 322.881L392.417 126.61L229.964 -69.6602Z" stroke="#2C2C2C" stroke-width="8" shape-rendering="crispEdges"/>
+              </g>
+              <g filter="url(#filter3_d_789_3818)">
+                <path d="M344.842 -69.6602L182.389 126.61L344.842 322.881L507.296 126.61L344.842 -69.6602Z" stroke="#2C2C2C" stroke-width="8" shape-rendering="crispEdges"/>
+              </g>
+              <path d="M12.0547 127.618H184.414" stroke="#2C2C2C" stroke-width="8"/>
+              <path d="M335.01 127.618H507.369" stroke="#2C2C2C" stroke-width="8"/>
+            </g>
+            <defs>
+              <filter id="filter0_d_789_3818" x="0.876953" y="-79.9336" width="343.293" height="413.088" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_789_3818"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_3818" result="shape"/>
+              </filter>
+              <filter id="filter1_d_789_3818" x="115.76" y="-79.9336" width="343.293" height="413.088" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_789_3818"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_3818" result="shape"/>
+              </filter>
+              <filter id="filter2_d_789_3818" x="58.3164" y="-79.9336" width="343.293" height="413.088" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_789_3818"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_3818" result="shape"/>
+              </filter>
+              <filter id="filter3_d_789_3818" x="173.195" y="-79.9336" width="343.293" height="413.088" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_789_3818"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_3818" result="shape"/>
+              </filter>
+            </defs>
+          </svg>
 
+        </div>
+      </template>
+    </CardBase>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 items-center mb-10">
+      <CardBase :variant="item.block_type" v-for="(item,index) in program.caiere_items">
+        <TypingText26 extra_class="mb-14"  :text="`0${index+1}`"/>
+        <TypingText18 extra_class="lg:max-w-[70%] mb-5" :text="item.text"/>
+
+      </CardBase>
+    </div>
+    <div class="flex gap-5">
+      <UIRoundedButton>Подать заявление</UIRoundedButton>
+      <UIRoundedButton outline primary >Задать вопрос</UIRoundedButton>
+    </div>
+  </BlockSection>
+  <BlockHowToApply/>
 </template>
 
 <style lang="sass">

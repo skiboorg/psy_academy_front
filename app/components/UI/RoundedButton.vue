@@ -5,14 +5,15 @@
       buttonClasses
     ]"
   >
-    <!-- Иконка слева -->
-    <span v-if="$slots.icon" class="flex items-center" :class="is_hero? 'icon':''">
-      <slot name="icon" />
-    </span>
+
 
     <!-- Текст кнопки -->
     <span>
       <slot />
+    </span>
+    <!-- Иконка слева -->
+    <span v-if="$slots.icon" class="flex items-center" :class="is_hero? 'icon':''">
+      <slot name="icon" />
     </span>
   </button>
 </template>
@@ -20,6 +21,7 @@
 <script setup>
 const props = defineProps({
   outline: { type: Boolean, default: false },
+  primary: { type: Boolean, default: false },
   is_hero: { type: Boolean, default: false }
 })
 
@@ -33,9 +35,10 @@ const buttonClasses = computed(() => {
   } else {
     // обычная
     return props.outline
-        ? ' text-[#2C2C2C] border border-[#DCDCDC]'
+        ? props.primary ? 'text-primary border border-primary' : ' text-[#2C2C2C] border border-[#DCDCDC]'
         : 'bg-[#B71D31] text-white border-none'
   }
+
 })
 </script>
 
