@@ -1,5 +1,13 @@
 <script setup lang="ts">
 defineProps(['item'])
+const visible = useState('callbackModalVisible')
+const form_type = useState('callbackModalFormType')
+
+const route = useRoute()
+const showCallBackModal = (formtype) => {
+  visible.value = true
+  form_type.value = {formtype,name:'Блок тариф. Страница: ' + route.fullPath}
+}
 </script>
 
 <template>
@@ -30,7 +38,7 @@ defineProps(['item'])
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
             <p ><span class="text-[36px]">{{item.price}}₽</span><span class="text-[#ADADAD]">{{item.price_text}}</span></p>
-            <UIRoundedButton>Приобрести запись</UIRoundedButton>
+            <UIRoundedButton @click="showCallBackModal('question')">Приобрести запись</UIRoundedButton>
           </div>
         </div>
 

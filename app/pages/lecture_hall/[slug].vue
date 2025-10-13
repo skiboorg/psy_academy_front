@@ -47,13 +47,13 @@ useSeoMeta({
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[40%]">
         <RoundedButton is_hero @click="showCallBackModal('primary')">Приобрести запись</RoundedButton>
-        <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
+        <RoundedButton outline is_hero @click="showCallBackModal('question')">Задать вопрос</RoundedButton>
       </div>
     </div>
 
   </BlockSection>
-  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url">
-    <div class="grid grid-cols-12 gap-5 h-[430px]">
+  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url || program.video_image">
+    <div class="grid grid-cols-12 gap-5 lg:h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
           <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
@@ -127,35 +127,35 @@ useSeoMeta({
         </CardBase>
       </div>
       <div class="col-span-12 lg:col-span-7">
-        <video
-            v-if="program.video"
-            class="h-full w-full rounded-[5px] object-cover"
-            controls
-            poster="~assets/images/video.png"
-        >
-          <source :src="program.video " type="video/mp4">
-        </video>
-        <div class="" v-if="program.video_url" v-html="program.video_url"></div>
+        <img class="w-full  lg:h-[430px] object-cover rounded-md" v-if="program.video_image" :src="program.video_image" alt="">
+        <div v-else>
+          <video
+              v-if="program.video"
+              class="h-full w-full rounded-[5px] object-cover"
+              controls
+              poster="~assets/images/video.png"
+          >
+            <source :src="program.video " type="video/mp4">
+          </video>
+          <div class="" v-if="program.video_url" v-html="program.video_url"></div>
+        </div>
+
       </div>
     </div>
   </BlockSection>
   <BlockSection title_text="Для кого">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="card in program.for_items">
+
+        <img class="mb-9" :src="card.image">
         <p class="text-[20px] font-semibold mb-5">{{card.name}}</p>
         <p class="text-sm leading-[140%]">{{card.text}}</p>
-        <template v-if="card.svg" #image>
-          <div class="mt-9" v-html="card.svg">
 
-
-
-          </div>
-        </template>
       </CardBase>
     </div>
   </BlockSection>
   <BlockSection title_text="Результат обучения">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 h-auto lg:h-[400px]">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 ">
       <CardBase v-for="card in program.about_items" :variant="card.block_type" >
         <TypingText26 :text="card.name" extra_class="mb-5"/>
         <p class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></p>
@@ -167,8 +167,9 @@ useSeoMeta({
     </div>
 
   </BlockSection>
-  <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
-                :file="program.study_plan ? program.study_plan : null">
+<!--  link_text="Подробный учебный план программы"-->
+<!--  :file="program.study_plan ? program.study_plan : null"-->
+  <BlockSection title_text="Программа обучения" >
     <BlockCourseInfoPanel :show_index="true" :items="program.lecture_modules"/>
   </BlockSection>
 <!--  <BlockSection title_text="Авторы обучения" extra_class="!mb-20">-->

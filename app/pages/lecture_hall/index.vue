@@ -6,9 +6,9 @@ definePageMeta({
 const val1 = ref()
 const val2 = ref()
 const options = [
-  { label: 'Москва', value: 'msk' },
-  { label: 'Санкт-Петербург', value: 'spb' },
-  { label: 'Новосибирск', value: 'nsk' }
+  { label: 'На этой неделе', value: 'msk' },
+  { label: 'В этом месяце', value: 'spb' },
+  { label: 'В этом году', value: 'nsk' }
 ]
 const {$api} = useNuxtApp()
 const {slug} = useRoute().params
@@ -26,7 +26,7 @@ const {data:lectures} = await useHttpRequest( useAsyncData(()=>$api.data.lecture
       Здесь вы можете слушать лекции и практикумы в онлайн и офлайн-формате, участвовать в мастер-классах и авторских воркшопах, знакомиться с новыми идеями и получать практические инструменты, находить контакты и возможности для профессионального роста.
 
     </p>
-    <div class="w-full overflow-x-auto mb-10 pb-3 lg:pb-0">
+    <div class="w-full  mb-10 pb-3 lg:pb-0">
       <div class="flex gap-2   ">
         <UISelect
             :options="options"
@@ -37,20 +37,19 @@ const {data:lectures} = await useHttpRequest( useAsyncData(()=>$api.data.lecture
         <UIRadio
             v-model="val2"
             :options="[
-    { label: 'Только бесплатные', value: 'yes' },
-    { label: 'Серия мероприятий', value: 'no' },
+    { label: 'Онлайн', value: 'yes' },
+    { label: 'Оффлайн', value: 'no' },
 
   ]"/>
-        <UISelect v-model="val2"  :options="options" placeholder="Формат" />
-        <UISelect v-model="val2"  :options="options" placeholder="Вид мероприятия" />
-        <UISelect v-model="val2"  :options="options" placeholder="Направления" />
+
       </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <template v-for="(lecture,index) in lectures" :key="index">
-        <CardLecture v-if="index !== 3" :lecture="lecture"/>
-        <CardSubscribe v-else />
+        <CardLecture :lecture="lecture"/>
+<!--        <CardLecture v-if="index !== 3" :lecture="lecture"/>-->
+<!--        <CardSubscribe v-else />-->
       </template>
     </div>
   </BlockSection>

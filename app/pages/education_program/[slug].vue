@@ -43,16 +43,16 @@ useSeoMeta({
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full lg:w-[30%]">
         <RoundedButton is_hero @click="showCallBackModal('primary')">Подать заявление</RoundedButton>
-        <RoundedButton outline is_hero>Задать вопрос</RoundedButton>
+        <RoundedButton outline @click="showCallBackModal('question')" is_hero>Задать вопрос</RoundedButton>
       </div>
 </div>
 
   </BlockSection>
-  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url">
-    <div class="grid grid-cols-12 gap-5 h-[430px]">
+  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url || program.video_image">
+    <div class="grid grid-cols-12 gap-5 lg:h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
-<!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
+          <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
           <TypingText26 text="О программе обучения" extra_class="mb-5"/>
           <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
           <template  #image>
@@ -123,15 +123,19 @@ useSeoMeta({
         </CardBase>
       </div>
       <div class="col-span-12 lg:col-span-7">
-        <video
-            v-if="program.video"
-            class="h-full w-full rounded-[5px] object-cover"
-            controls
-            poster="~assets/images/video.png"
-        >
-          <source :src="program.video " type="video/mp4">
-        </video>
-        <div class="" v-if="program.video_url" v-html="program.video_url"></div>
+        <img class="w-full  lg:h-[430px] object-cover rounded-md " v-if="program.video_image" :src="program.video_image" alt="">
+        <div v-else>
+          <video
+              v-if="program.video"
+              class="h-full w-full rounded-[5px] object-cover"
+              controls
+              poster="~assets/images/video.png"
+          >
+            <source :src="program.video " type="video/mp4">
+          </video>
+          <div class="" v-if="program.video_url" v-html="program.video_url"></div>
+        </div>
+
       </div>
     </div>
   </BlockSection>
@@ -151,8 +155,9 @@ useSeoMeta({
 
   </BlockSection>
   <BlockQuote class="mb-10 lg:mb-20" v-if="program.quote_text" :text="program.quote_text"/>
-  <BlockSection title_text="Программа обучения" link_text="Подробный учебный план программы"
-                :file="program.study_plan ? program.study_plan : null">
+<!--  link_text="Подробный учебный план программы"-->
+<!--  :file="program.study_plan ? program.study_plan : null"-->
+  <BlockSection title_text="Программа обучения" >
   <BlockCourseInfoPanel :show_index="true" :items="program.modules"/>
   </BlockSection>
   <BlockSection title_text="Преимущества программы">

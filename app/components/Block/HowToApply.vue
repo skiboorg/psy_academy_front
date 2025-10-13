@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const visible = useState('callbackModalVisible')
+const form_type = useState('callbackModalFormType')
+
+const route = useRoute()
+const showCallBackModal = (formtype) => {
+  visible.value = true
+  form_type.value = {formtype,name:'Страница: ' + route.fullPath}
+}
+
 const items = [
   {title:'Оставьте заявку на собеседование',icon:'<svg class="w-[30%] lg:w-[50%] h-auto" viewBox="0 0 82 198" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
         '<path d="M57.4 198V52.8C57.4 49.4 57.4 45.8 57.4 42C57.6 38 57.8 33.9 58 29.7C51.2 36.3 43.3 42.1 34.3 47.1C25.3 51.9 16.1 55.4 6.7 57.6L0.4 35.7C4 35.3 8.5 34 13.9 31.8C19.5 29.4 25.3 26.5 31.3 23.1C37.5 19.5 43.2 15.7 48.4 11.7C53.6 7.69999 57.6 3.79999 60.4 -7.86781e-06H81.4V198H57.4Z" fill="#B71D31"/>\n' +
@@ -28,8 +37,8 @@ const items = [
       </CardBase>
     </div>
     <div class="flex gap-5">
-      <UIRoundedButton>Подать заявление</UIRoundedButton>
-      <UIRoundedButton outline primary >Задать вопрос</UIRoundedButton>
+      <UIRoundedButton @click="showCallBackModal('primary')">Подать заявление</UIRoundedButton>
+      <UIRoundedButton @click="showCallBackModal('question')" outline primary >Задать вопрос</UIRoundedButton>
     </div>
   </BlockSection>
 </template>
