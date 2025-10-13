@@ -14,6 +14,11 @@ const showCallBackModal = (formtype) => {
   form_type.value = {formtype,name:'Лекция: ' + program.value.name}
 }
 
+useSeoMeta({
+  title: `${program.value.page_title}`,
+  ogTitle: `${program.value.page_description}`,
+})
+
 </script>
 
 <template>
@@ -29,7 +34,7 @@ const showCallBackModal = (formtype) => {
       />
       <div class="w-full">
         <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
-        <p class="text-white lg:text-lg !leading-[120%] lg:max-w-[40%]">{{program.short_description}}</p>
+        <p class="text-white lg:text-lg !leading-[120%] lg:max-w-[70%]">{{program.short_description}}</p>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5">
         <CardCourseInfoItem class="lg:col-span-2" title="Стоимость" :text="program.price"/>
@@ -47,13 +52,13 @@ const showCallBackModal = (formtype) => {
     </div>
 
   </BlockSection>
-  <BlockSection v-if="program.video">
+  <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url">
     <div class="grid grid-cols-12 gap-5 h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase variant="primary" >
-          <UIBadge class="mb-[30px]" label="Нейропсихология"/>
-          <TypingText26 text="Посмотрите видео о программе обучения" extra_class="mb-5"/>
-          <p class="text-sm leading-[140%] max-w-[80%]">{{program.video_text}}</p>
+          <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
+          <TypingText26 text="О программе обучения" extra_class="mb-5"/>
+          <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
           <template  #image>
             <div class="absolute right-0 bottom-0" >
               <svg width="424" height="358" viewBox="0 0 424 358" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,12 +128,14 @@ const showCallBackModal = (formtype) => {
       </div>
       <div class="col-span-12 lg:col-span-7">
         <video
+            v-if="program.video"
             class="h-full w-full rounded-[5px] object-cover"
             controls
             poster="~assets/images/video.png"
         >
-          <source :src="program.video" type="video/mp4">
+          <source :src="program.video " type="video/mp4">
         </video>
+        <div class="" v-if="program.video_url" v-html="program.video_url"></div>
       </div>
     </div>
   </BlockSection>
@@ -164,13 +171,13 @@ const showCallBackModal = (formtype) => {
                 :file="program.study_plan ? program.study_plan : null">
     <BlockCourseInfoPanel :show_index="true" :items="program.lecture_modules"/>
   </BlockSection>
-  <BlockSection title_text="Авторы обучения" extra_class="!mb-20">
+<!--  <BlockSection title_text="Авторы обучения" extra_class="!mb-20">-->
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 h-auto lg:h-[350px]">
-      <CardTeacherH v-for="item in program.teachers" :item="item" />
+<!--    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 h-auto lg:h-[350px]">-->
+<!--      <CardTeacherH v-for="item in program.teachers" :item="item" />-->
 
-    </div>
-  </BlockSection>
+<!--    </div>-->
+<!--  </BlockSection>-->
   <BlockSection title_text="Тарифы">
     <BlockTariff :item="program.tariff"/>
   </BlockSection>

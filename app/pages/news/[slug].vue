@@ -9,6 +9,10 @@ const options = [
   { label: 'Все', value: 'all' },
 ]
 const ttt = tags.value.map((tag, index) => ({ label: tag.name, value: tag.slug }))
+useSeoMeta({
+  title: `${news_item.value.page_title}`,
+  ogTitle: `${news_item.value.page_description}`,
+})
 </script>
 
 <template>

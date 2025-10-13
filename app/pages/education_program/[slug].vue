@@ -13,7 +13,10 @@ const showCallBackModal = (formtype) => {
   visible.value = true
   form_type.value = {formtype,name:'Программа: ' + program.value.name}
 }
-
+useSeoMeta({
+  title: `${program.value.page_title}`,
+  ogTitle: `${program.value.page_description}`,
+})
 </script>
 <template>
 

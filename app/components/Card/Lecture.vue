@@ -5,14 +5,14 @@ defineProps(['lecture'])
 <template>
   <div class="bg-white">
 
-    <img  :src="lecture.cover_image">
+    <img class="w-full h-auto lg:h-[285px] object-cover" :src="lecture.cover_image">
     <div class="p-[30px]">
       <div class="flex items-center gap-2 mb-[30px]">
-        <UIBadge :label="lecture.start_date + lecture.end_date"/>
-        <UIBadge with_dot :label="lecture.format?.name" :dot_color="lecture.format?.color"/>
+        <UIBadge :label="lecture.card_tag"/>
+        <UIBadge :label="lecture.format?.name" :dot_color="lecture.format?.color"/>
 
       </div>
-      <p class="text-lg font-semibold mb-5 leading-[120%] tracking-[-0.05rem]">{{lecture.name}}</p>
+      <p class="text-lg font-semibold mb-5 leading-[120%] tracking-[-0.05rem] lg:min-h-[44px]">{{lecture.name}}</p>
       <p class="text-sm text-[#727272] leading-[140%] mb-[30px]">Стоимость от {{lecture.price}}</p>
       <UIButton show_left_icon :primary="false" >
         <nuxt-link :to="`/lecture_hall/${lecture.slug}`">Приобрести билет</nuxt-link>
