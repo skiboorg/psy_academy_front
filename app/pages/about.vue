@@ -43,7 +43,7 @@ const  modules = [
         <div class="flex flex-col items-start justify-end h-full !z-10">
           <div class="flex items-end justify-between w-full !z-10">
             <TypingText20 text="Миссия<br> и ценности" />
-            <UIArrowButton to="/"/>
+            <UIArrowButton to="#mission"/>
           </div>
 
         </div>
@@ -64,7 +64,7 @@ const  modules = [
         <div class="flex flex-col items-start justify-end h-full !z-10">
           <div class="flex items-end justify-between w-full !z-10">
             <TypingText20 text="Стратегические<br>цели - 2030" />
-            <UIArrowButton is-dark to="/"/>
+            <UIArrowButton is-dark to="#target"/>
           </div>
 
         </div>
@@ -259,7 +259,7 @@ const  modules = [
       </CardBase>
     </div>
   </BlockSection>
-  <BlockSection>
+  <BlockSection id="mission">
     <div class="grid grid-cols-12 gap-5 h-[430px]">
       <div class="col-span-12 lg:col-span-5">
         <CardBase >
@@ -346,7 +346,7 @@ const  modules = [
       </div>
     </div>
   </BlockSection>
-  <PageBlockStrategyTarget class="mt-40"/>
+  <PageBlockStrategyTarget id="target" class="mt-40"/>
   <BlockSection title_text="Руководящий состав">
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 h-auto lg:h-[350px]">
