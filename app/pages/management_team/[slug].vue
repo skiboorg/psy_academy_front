@@ -37,27 +37,34 @@ const {data:news} = await useHttpRequest( useAsyncData(()=>$api.data.news(false,
   {label:user.full_name}
   ]"
   />
-  <BlockSection :title_text="user.full_name" >
-    <div class="grid grid-cols-12 gap-5">
-      <div class="col-span-12 lg:col-span-8">
-        <CardBase extra_class="space-y-7">
-          <UIBadge :label="user.position"/>
-          <p class="text-sm lg:max-w-[70%] leading-[140%] ">{{user.short_description}}</p>
-          <div class="grid grid-cols-12 gap-5">
-            <div class="col-span-2"><p class="text-primary font-semibold">Стаж работы</p></div>
-            <div class="col-span-10"><p>{{user.work_time}}</p></div>
-            <div class="col-span-2"><p class="text-primary font-semibold">Должность</p></div>
-            <div class="col-span-10"><p>{{user.position}}</p></div>
-            <div class="col-span-2"><p class="text-primary font-semibold">Квалификация</p></div>
-            <div class="col-span-10"><p>{{user.quality}}</p></div>
+  <BlockSection  >
+    <div class="grid grid-cols-12 gap-5 lg:min-h-[400px]">
+      <div class="col-span-12 lg:col-span-8 order-1 lg:order-0 ">
+        <CardBase >
+          <div class="flex flex-col items-start justify-between h-full gap-10 ">
+            <div class="space-y-7">
+              <h2 class="font-semibold text-[26px] lg:text-[48px] leading-[100%] ">{{user.full_name}}</h2>
+              <UIBadge :label="user.position"/>
+              <p class="text-lg lg:max-w-[70%] leading-[140%] ">{{user.short_description}}</p>
+            </div>
 
+            <div class="grid grid-cols-12 gap-5 text-[20px]">
+              <div class="col-span-4 lg:col-span-2"><p class="text-primary font-semibold">Стаж работы</p></div>
+              <div class="col-span-8 lg:col-span-10"><p>{{user.work_time}}</p></div>
+              <div class="col-span-4 lg:col-span-2"><p class="text-primary font-semibold">Должность</p></div>
+              <div class="col-span-8 lg:col-span-10"><p>{{user.position}}</p></div>
+              <div class="col-span-4 lg:col-span-2"><p class="text-primary font-semibold">Квалификация</p></div>
+              <div class="col-span-8 lg:col-span-10"><p>{{user.quality}}</p></div>
+
+            </div>
           </div>
+
         </CardBase>
       </div>
-      <div class="col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4 order-0 lg:order-1">
         <CardBase>
           <template #image>
-            <img class="lg:absolute w-full h-auto object-cover lg:w-auto lg:h-auto bottom-0 lg:left-1/2 lg:-translate-x-1/2" :src="user.photo" alt="">
+            <img class="lg:absolute w-full h-auto object-contain lg:w-auto lg:h-auto bottom-0 lg:left-1/2 lg:-translate-x-1/2" :src="user.photo" alt="">
           </template>
         </CardBase>
       </div>
@@ -75,7 +82,7 @@ const {data:news} = await useHttpRequest( useAsyncData(()=>$api.data.news(false,
 
                 </div>
               <div class="col-span-12 lg:col-span-10">
-                <p class="text-sm">{{item.text}}</p>
+                <p class="text-lg">{{item.text}}</p>
               </div>
             </div>
           </CardBase>

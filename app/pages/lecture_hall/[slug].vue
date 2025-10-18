@@ -53,81 +53,82 @@ useSeoMeta({
 
   </BlockSection>
   <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url || program.video_image">
-    <div class="grid grid-cols-12 gap-5 lg:h-[430px]">
-      <div class="col-span-12 lg:col-span-5">
-        <CardBase variant="primary" >
-          <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
-          <TypingText26 text="О программе обучения" extra_class="mb-5"/>
-          <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
-          <template  #image>
-            <div class="absolute right-0 bottom-0" >
-              <svg width="424" height="358" viewBox="0 0 424 358" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.05">
-                  <g filter="url(#filter0_d_406_2083)">
-                    <path d="M628 265.63L319.157 9.99986L10.3146 265.63L319.157 521.26L628 265.63Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
-                  </g>
-                  <g filter="url(#filter1_d_406_2083)">
-                    <path d="M628 446.405L319.157 190.775L10.3146 446.405L319.157 702.035L628 446.405Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
-                  </g>
-                  <g filter="url(#filter2_d_406_2083)">
-                    <path d="M628 356.015L319.157 100.385L10.3146 356.015L319.157 611.645L628 356.015Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
-                  </g>
-                  <g filter="url(#filter3_d_406_2083)">
-                    <path d="M628 536.781L319.157 281.151L10.3146 536.781L319.157 792.411L628 536.781Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
-                  </g>
-                  <path d="M317.573 13.1227L317.573 284.34" stroke="white" stroke-width="8"/>
-                  <path d="M4 265.583L3.99999 536.801" stroke="white" stroke-width="8"/>
-                </g>
-                <defs>
-                  <filter id="filter0_d_406_2083" x="0.0412598" y="0.807373" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
-                  </filter>
-                  <filter id="filter1_d_406_2083" x="0.0412598" y="181.582" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
-                  </filter>
-                  <filter id="filter2_d_406_2083" x="0.0412598" y="91.1926" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
-                  </filter>
-                  <filter id="filter3_d_406_2083" x="0.0412598" y="271.958" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
-                  </filter>
-                </defs>
-              </svg>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:h-[430px]">
 
-            </div>
-          </template>
-        </CardBase>
-      </div>
-      <div class="col-span-12 lg:col-span-7">
-        <img class="w-full  lg:h-[430px] object-cover rounded-md" v-if="program.video_image" :src="program.video_image" alt="">
+      <CardBase variant="primary" extra_class="w-full">
+        <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
+
+        <p class="font-semibold text-[20px] lg:text-[40px] leading-[100%] tracking-[-0.04rem] mb-5"  >О программе обучения</p>
+        <div class="text-lg leading-[140%]  news-content dot-white overflow-y-auto h-[90%] w-full" v-html="program.video_text"></div>
+        <template  #image>
+          <div class="absolute right-0 bottom-0" >
+            <svg width="424" height="358" viewBox="0 0 424 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.05">
+                <g filter="url(#filter0_d_406_2083)">
+                  <path d="M628 265.63L319.157 9.99986L10.3146 265.63L319.157 521.26L628 265.63Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
+                </g>
+                <g filter="url(#filter1_d_406_2083)">
+                  <path d="M628 446.405L319.157 190.775L10.3146 446.405L319.157 702.035L628 446.405Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
+                </g>
+                <g filter="url(#filter2_d_406_2083)">
+                  <path d="M628 356.015L319.157 100.385L10.3146 356.015L319.157 611.645L628 356.015Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
+                </g>
+                <g filter="url(#filter3_d_406_2083)">
+                  <path d="M628 536.781L319.157 281.151L10.3146 536.781L319.157 792.411L628 536.781Z" stroke="white" stroke-width="8" shape-rendering="crispEdges"/>
+                </g>
+                <path d="M317.573 13.1227L317.573 284.34" stroke="white" stroke-width="8"/>
+                <path d="M4 265.583L3.99999 536.801" stroke="white" stroke-width="8"/>
+              </g>
+              <defs>
+                <filter id="filter0_d_406_2083" x="0.0412598" y="0.807373" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
+                </filter>
+                <filter id="filter1_d_406_2083" x="0.0412598" y="181.582" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
+                </filter>
+                <filter id="filter2_d_406_2083" x="0.0412598" y="91.1926" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
+                </filter>
+                <filter id="filter3_d_406_2083" x="0.0412598" y="271.958" width="638.232" height="529.645" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_406_2083"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_406_2083" result="shape"/>
+                </filter>
+              </defs>
+            </svg>
+
+          </div>
+        </template>
+      </CardBase>
+
+      <div >
+        <img class="w-full  lg:h-[430px] object-cover rounded-md " v-if="program.video_image" :src="program.video_image" alt="">
         <div v-else>
           <video
               v-if="program.video"
@@ -147,9 +148,9 @@ useSeoMeta({
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="card in program.for_items">
 
-        <img class="mb-9" :src="card.image">
-        <p class="text-[20px] font-semibold mb-5">{{card.name}}</p>
-        <p class="text-sm leading-[140%]">{{card.text}}</p>
+        <img v-if="card.image" class="mb-9" :src="card.image">
+        <p class="text-[24px] leading-[110%] font-semibold mb-5">{{card.name}}</p>
+        <p class="text-lg leading-[140%]">{{card.text}}</p>
 
       </CardBase>
     </div>
@@ -158,7 +159,7 @@ useSeoMeta({
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 ">
       <CardBase v-for="card in program.about_items" :variant="card.block_type" >
         <TypingText26 :text="card.name" extra_class="mb-5"/>
-        <p class="text-sm leading-[140%] max-w-[80%]" v-html="card.text"></p>
+        <p class="text-lg leading-[140%] max-w-[80%]" v-html="card.text"></p>
         <template v-if="card.svg" #image>
           <div class="absolute right-0 bottom-0" v-html="card.svg"></div>
         </template>

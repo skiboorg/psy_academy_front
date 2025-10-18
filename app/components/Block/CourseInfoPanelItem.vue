@@ -19,9 +19,9 @@ defineProps(['item','index','show_index'])
     <template #header>
       <div class="flex flex-col gap-5 items-start">
         <UIBadge v-if="show_index" :label="item.tag"/>
-        <p class="text-lg text-grey2c font-semibold">{{item.name}}</p>
+        <p class="text-[24px] text-grey2c font-semibold">{{item.name}}</p>
       </div>
     </template>
-    <div class="m-0 lg:max-w-[85%]" v-html="item.description"></div>
+    <div class="m-0 lg:max-w-[85%] text-lg" v-html="item.description"></div>
   </Panel>
 </template>

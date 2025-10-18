@@ -12,7 +12,7 @@ definePageMeta({
   <PageBlockProgramms/>
   <PageBlockNotOnlyPsy/>
   <PageBlockTimeLiders/>
-  <BlockSection>
+  <BlockSection extra_class="mt-32">
     <BlockQuote :show_arrows="true" text="
     Сегодня недостаточно просто адаптироваться к изменениям. Наши студенты учатся мыслить системно, соединять психологию, бизнес и технологии, чтобы создавать решения, которые формируют будущее.
 "/>

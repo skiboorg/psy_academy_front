@@ -3,7 +3,7 @@ const props = defineProps(['title_text','extra_class','link_text','link_to','fil
 </script>
 
 <template>
-<section class="mb-20 lg:mb-40" :class="extra_class">
+<section class="mb-5 lg:mb-14" :class="extra_class">
   <div class="container h-full">
     <div class="flex flex-wrap gap-10 items-end justify-between" :class="link_to ||file || extra_buttons ? 'mb-10' : ''">
       <TypingH2 v-if="title_text" :text="title_text" :extra_class="link_to ||file || extra_buttons ? '' : 'mb-10'"/>

@@ -21,8 +21,8 @@ useSeoMeta({
 <template>
 
   <BlockHeader/>
-  <BlockSection extra_class="!mb-20 h-auto lg:h-[870px] bg-[url('/slug.png')] bg-cover bg-center relative overflow-hidden pt-[168px]
-   pb-[30px] lg:pb-[100px]">
+  <BlockSection extra_class="!mb-20 h-auto lg:h-[870px]  bg-cover bg-center relative overflow-hidden pt-[168px]
+   pb-[30px] lg:pb-[100px]" :style="`background-image: url(${program.background_image})`">
     <div class="h-full flex flex-col items-start justify-between">
       <BlockBreadcrumbs :not_use_container="true" :items="[
   { label: 'Все программы обучения',href:'/education_program', },
@@ -30,9 +30,9 @@ useSeoMeta({
   ]"
       />
       <div>
-        <h1 class="text-white text-[32px] lg:text-[40px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
+        <h1 class="text-white text-[32px] lg:text-[48px] font-semibold leading-[105%] mb-5">{{program.name}}</h1>
 
-        <p class="text-white text-lg leading-[120%] lg:max-w-[70%] mb-4 lg:mb-0">{{program.short_description}}</p>
+        <p class="text-white text-[20px] leading-[130%] lg:max-w-[70%] mb-4 lg:mb-0">{{program.short_description}}</p>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-12 w-full gap-5 mb-4 lg:mb-0">
         <CardCourseInfoItem class="lg:col-span-2" title="Формат" :text="program.format?.name"/>
@@ -49,12 +49,13 @@ useSeoMeta({
 
   </BlockSection>
   <BlockSection extra_class="!mb-10"  v-if="program.video || program.video_url || program.video_image">
-    <div class="grid grid-cols-12 gap-5 lg:h-[430px]">
-      <div class="col-span-12 lg:col-span-5">
-        <CardBase variant="primary" >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:h-[430px]">
+
+        <CardBase variant="primary" extra_class="w-full">
           <!--          <UIBadge class="mb-[30px]" label="Нейропсихология"/>-->
-          <TypingText26 text="О программе обучения" extra_class="mb-5"/>
-          <div class="text-sm leading-[140%] max-w-[80%]" v-html="program.video_text"></div>
+
+          <p class="font-semibold text-[20px] lg:text-[40px] leading-[100%] tracking-[-0.04rem] mb-5"  >О программе обучения</p>
+          <div class="text-lg leading-[140%]  news-content dot-white overflow-y-auto h-[90%] w-full" v-html="program.video_text"></div>
           <template  #image>
             <div class="absolute right-0 bottom-0" >
               <svg width="424" height="358" viewBox="0 0 424 358" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,8 +122,8 @@ useSeoMeta({
             </div>
           </template>
         </CardBase>
-      </div>
-      <div class="col-span-12 lg:col-span-7">
+
+      <div >
         <img class="w-full  lg:h-[430px] object-cover rounded-md " v-if="program.video_image" :src="program.video_image" alt="">
         <div v-else>
           <video
@@ -139,6 +140,17 @@ useSeoMeta({
       </div>
     </div>
   </BlockSection>
+  <BlockSection title_text="Преимущества программы">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <CardBase v-for="item in program.p_features">
+        <UIBadge class="mb-7" variant="primary" :label="item.tag"/>
+        <p class="text-lg font-semibold mb-5">{{item.name}}</p>
+        <p>{{item.text}}</p>
+      </CardBase>
+    </div>
+
+  </BlockSection>
 <!--  title_text="О программе"-->
   <BlockSection  >
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -154,34 +166,26 @@ useSeoMeta({
     </div>
 
   </BlockSection>
+  <BlockSection >
   <BlockQuote class="mb-10 lg:mb-20" v-if="program.quote_text" :text="program.quote_text"/>
+    </BlockSection>
 <!--  link_text="Подробный учебный план программы"-->
 <!--  :file="program.study_plan ? program.study_plan : null"-->
   <BlockSection title_text="Программа обучения" >
   <BlockCourseInfoPanel :show_index="true" :items="program.modules"/>
   </BlockSection>
-  <BlockSection title_text="Преимущества программы">
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-      <CardBase v-for="item in program.p_features">
-        <UIBadge class="mb-7" variant="primary" :label="item.tag"/>
-        <p class="text-lg font-semibold mb-5">{{item.name}}</p>
-        <p>{{item.text}}</p>
-      </CardBase>
-    </div>
-
-  </BlockSection>
 
   <BlockSection title_text="Кому подойдет программа">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       <CardBase v-for="item in program.p_for_items">
         <div class="flex flex-col items-start justify-between gap-5 lg:gap-8">
-
-            <div class="order-1 ld:order-0">
+          <img class="lg:w-full" :src="item.image"></img>
+            <div class="">
               <p class="text-lg font-medium leading-[110%] mb-5">{{item.name}}</p>
               <p >{{item.text}}</p>
             </div>
-            <img class="order-0 lg:order-1 lg:w-full" :src="item.image"></img>
+
           </div>
 
 
@@ -262,8 +266,11 @@ useSeoMeta({
     </CardBase>
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 items-center mb-10">
       <CardBase :variant="item.block_type" v-for="(item,index) in program.caiere_items">
-        <TypingText26 extra_class="mb-14"  :text="`0${index+1}`"/>
-        <TypingText18 extra_class="lg:max-w-[70%] mb-5" :text="item.text"/>
+        <div class="flex flex-col items-start justify-between h-full gap-6">
+          <TypingText26   :text="`0${index+1}`"/>
+          <TypingText18 extra_class="mb-5" :text="item.text"/>
+
+        </div>
 
       </CardBase>
     </div>
